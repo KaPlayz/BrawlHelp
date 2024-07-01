@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrawlHelp - Nulls</title>
+    <link rel="icon" href="logo.jpg" type="image/jpeg">
+    <style>
+        body{
+            font-family: sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
+        }
+        .box{
+            border: 2px solid black;
+            border-radius: 5px;
+            width: 400px;
+            height: 175px;
+            margin: auto;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html">Go to default site!</a>
+    <div class="box">
+        <h1>Add New Friend</h1>
+        <p>(DONT TYPE A #!)</p>
+        <input type="text" id="input1" class="input" placeholder="New Friend With Player ID...">
+        <button onclick="QRcode1()">Generate QR Code</button>
+        <button onclick="GenerateURL1()">Generate URL</button>
+        <p id="url1"></p>
+    </div>
+    <div class="box">
+        <h1>Join Team</h1>
+        <input type="text" id="input2" class="input" placeholder="Join Team Using Team ID...">
+        <button onclick="QRcode2()">Generate QR Code</button>
+        <button onclick="GenerateURL2()">Generate URL</button>
+        <p id="url2"></p>
+    </div>
+    <script>
+        // QR Code Section
+
+        function QRcode1(){
+            window.location.href = `qrgenerator.html?url=https://link.nulls.gg/nb/invite/friend/en?tag=${document.getElementById("input1").value.toUpperCase()}`;
+        }
+        function QRcode2(){
+            window.location.href = `qrgenerator.html?url=https://link.nulls.gg/nb/invite/gameroom/en?tag=${document.getElementById("input2").value.toUpperCase()}`;
+        }
+
+        // URL Section
+
+        function GenerateURL1(){
+            document.getElementById("url1").innerHTML = `https://link.nulls.gg/nb/invite/friend/en?tag=${document.getElementById("input1").value.toUpperCase()}`;
+        }
+        function GenerateURL2(){
+            document.getElementById("url2").innerHTML = `https://link.nulls.gg/nb/invite/gameroom/en?tag=${document.getElementById("input2").value.toUpperCase()}`;
+        }
+    </script>
+</body>
+<!-- https://link.nulls.gg/nb/invite/friend/en?tag= , https://link.nulls.gg/nb/invite/gameroom/en?tag= -->
+</html>
